@@ -12,14 +12,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(uniqueConstraints = @UniqueConstraint(
-        name = "emailid_unique", columnNames = "email_address"),
-        name= "tbl_student")
+@Table(name="tbl_student",
+        uniqueConstraints = @UniqueConstraint(
+        name = "emailid_unique", columnNames = "email_address"))
 public class Student {
 
     @Id
     @SequenceGenerator(
-
             name = "student_sequence",
     sequenceName = "student_sequence",
     allocationSize = 1)
