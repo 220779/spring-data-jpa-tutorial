@@ -57,4 +57,32 @@ class StudentRepositoryTest  {
         studentRepository.save(student);
     }
 
+    @Test
+    public void printStudentByFirstName () {
+        List<Student> students = studentRepository.findByFirstName("Krakov");
+
+        System.out.println("students = " + students);
+    }
+
+    @Test
+    public void findByFirstNameContaining () {
+        List<Student> studentList = studentRepository.findByFirstNameContaining("r");
+
+        System.out.println("studentList = " + studentList);
+
+    }
+
+    @Test
+    public void findByLastNameNotNull (){
+
+        List<Student> list = studentRepository.findByLastNameNotNull();
+    }
+
+    @Test
+    public void printStudentBasedOnGuardianName () {
+
+        List<Student> students = studentRepository.findByGuardianName("Alibaba");
+
+        System.out.println("Students = " + students);
+    }
 }
