@@ -1,8 +1,7 @@
 package com.dailycodebuffer.spring.data.jpa.tutorial.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +15,16 @@ import lombok.NoArgsConstructor;
 public class Course {
 
     @Id
+    @SequenceGenerator(
+            name = "course_sequence",
+            sequenceName = "course_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue (
+            strategy = GenerationType.SEQUENCE,
+            generator = "course_sequence"
+    )
     private Long courseId;
-    private Long title;
+    private String title;
     private Integer credits;
 }
