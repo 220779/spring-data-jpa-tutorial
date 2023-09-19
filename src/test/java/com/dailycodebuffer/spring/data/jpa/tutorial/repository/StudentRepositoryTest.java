@@ -32,13 +32,6 @@ class StudentRepositoryTest  {
     }
 
     @Test
-    public void printAllStudent () {
-        List<Student> studentList =  studentRepository.findAll();
-
-        System.out.println("studentList = " + studentList);
-    }
-
-    @Test
     public void saveStudentWithGuardian() {
 
         Guardian guardian = Guardian.builder()
@@ -55,6 +48,12 @@ class StudentRepositoryTest  {
                 .build();
 
         studentRepository.save(student);
+    }
+
+    @Test
+    public void printAllStudent () {
+        List<Student> student = studentRepository.findAll();
+        System.out.println("student = " + student);
     }
 
     @Test
@@ -121,4 +120,6 @@ class StudentRepositoryTest  {
      public void updateStudentNameByEmailIdTest () {
         studentRepository.updateStudentNameByEmailId("Tsoots", "geoklo@gmail.com");
      }
+
+
 }
