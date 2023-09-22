@@ -20,12 +20,12 @@ class CourseMaterialRepositoryTest {
     public void saveCourseMaterial () {
 
         Course course = Course.builder()
-                .title("DNA")
+                .title("AND")
                 .credits(6)
                 .build();
 
         CourseMaterial courseMaterial = CourseMaterial.builder()
-                .url("www.google.com")
+                .url("www.muugle.com")
                 .course(course)
                 .build();
 
