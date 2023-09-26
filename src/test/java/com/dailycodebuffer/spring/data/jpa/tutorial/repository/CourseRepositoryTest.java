@@ -8,15 +8,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 @SpringBootTest
-class CourseRepositoryTest {
+class    CourseRepositoryTest {
 
     @Autowired
     private CourseRepository courseRepository;
+
 
     @Test
     public void printCourses () {
         List<Course> courses = courseRepository.findAll();
         System.out.println("courses = " + courses);
     }
+
+
 
 }

@@ -4,11 +4,13 @@ package com.dailycodebuffer.spring.data.jpa.tutorial.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = "cour se")
+@ToString(exclude = "course")
 @Builder
 public class CourseMaterial {
 
@@ -26,7 +28,7 @@ public class CourseMaterial {
     private Long courseMaterialId;
     private String url;
 
-    @OneToOne (
+    @OneToOne   (
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY,
             optional = false
@@ -35,5 +37,5 @@ public class CourseMaterial {
             name ="course_id",
             referencedColumnName = "courseId"
     )
-    private  Course course;
+    private Course course;
 }

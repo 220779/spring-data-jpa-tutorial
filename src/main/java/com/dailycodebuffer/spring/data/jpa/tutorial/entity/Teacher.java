@@ -1,5 +1,6 @@
 package com.dailycodebuffer.spring.data.jpa.tutorial.entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,10 +30,13 @@ public class Teacher {
     private String firstName;
     private String lastName;
 
-    @OneToMany ( cascade = CascadeType.ALL)
-    @JoinColumn ( name = "teacher_id",
-                  referencedColumnName = "teacherId")
+
+    @OneToMany (
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn (
+            name = "teacher_id",
+            referencedColumnName = "teacherId"
+    )
     private List<Course> courses;
-
-
 }
